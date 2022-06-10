@@ -15,7 +15,7 @@ namespace TransactionReportsStorage.UI
         static void Main()
         {
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             Configuration = builder.Build();
 
             var services = new ServiceCollection();
@@ -25,7 +25,7 @@ namespace TransactionReportsStorage.UI
             services.AddLogging(builder => builder.AddLogger(Configuration));
             ServiceProvider = services.BuildServiceProvider();
 
-            //await DbInitializer.InitializeDb(ServiceProvider);
+            DbInitializer.InitializeDb(ServiceProvider);
 
             ApplicationConfiguration.Initialize();
             System.Windows.Forms.Application.Run(ServiceProvider.GetRequiredService<Form1>());

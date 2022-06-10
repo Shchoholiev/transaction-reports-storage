@@ -6,36 +6,36 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
 {
     public static class DbInitializer
     {
-        public static async Task InitializeDb(IServiceProvider serviceProvider)
+        public static void InitializeDb(IServiceProvider serviceProvider)
         {
             var scope = serviceProvider.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
-            await Initialize(context);
+            Initialize(context);
         }
 
-        private static async Task Initialize(ApplicationContext context)
+        private static void Initialize(ApplicationContext context)
         {
-            await context.Database.EnsureDeletedAsync();
-            await context.Database.EnsureCreatedAsync();
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
 
             var cell1 = new Cell { Name = "CellF" };
             var cell2 = new Cell { Name = "Second" };
             var cell3 = new Cell { Name = "Test" };
 
-            await context.Cells.AddRangeAsync(cell1, cell2, cell3);
-            await context.SaveChangesAsync();
+            context.Cells.AddRange(cell1, cell2, cell3);
+            context.SaveChanges();
 
             var petro = new User { Name = "Petro" };
             var andrii = new User { Name = "Andrii" };
             var mihail = new User { Name = "Mihail" };
 
-            await context.Users.AddRangeAsync(petro, andrii, mihail);
-            await context.SaveChangesAsync();
+            context.Users.AddRange(petro, andrii, mihail);
+            context.SaveChanges();
 
             var record1 = new Record 
             { 
                 Name = "Moved Documentation", 
-                DateTime = new DateTime().AddDays(-7),
+                DateTime = DateTime.Now.AddDays(-7),
                 Cell = cell1,
                 User = petro,
             };
@@ -43,7 +43,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record2 = new Record 
             { 
                 Name = "Moved Project", 
-                DateTime = new DateTime().AddDays(-15),
+                DateTime = DateTime.Now.AddDays(-15),
                 Cell = cell1,
                 User = andrii,
             };
@@ -51,7 +51,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record3 = new Record 
             { 
                 Name = "Copied Images", 
-                DateTime = new DateTime().AddDays(-9),
+                DateTime = DateTime.Now.AddDays(-9),
                 Cell = cell2,
                 User = mihail,
             };
@@ -59,7 +59,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record4 = new Record 
             { 
                 Name = "Transfered data", 
-                DateTime = new DateTime().AddDays(-4),
+                DateTime = DateTime.Now.AddDays(-4),
                 Cell = cell3,
                 User = andrii,
             };
@@ -67,7 +67,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record5 = new Record 
             { 
                 Name = "Moved Pdfs", 
-                DateTime = new DateTime().AddDays(-30),
+                DateTime = DateTime.Now.AddDays(-30),
                 Cell = cell3,
                 User = petro,
             };
@@ -75,7 +75,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record6 = new Record 
             { 
                 Name = "Copied data", 
-                DateTime = new DateTime().AddDays(-3.5),
+                DateTime = DateTime.Now.AddDays(-3.5),
                 Cell = cell1,
                 User = mihail,
             };
@@ -83,7 +83,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record7 = new Record 
             { 
                 Name = "Changed data", 
-                DateTime = new DateTime().AddDays(-3.2),
+                DateTime = DateTime.Now.AddDays(-3.2),
                 Cell = cell3,
                 User = andrii,
             };
@@ -91,7 +91,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record8 = new Record 
             { 
                 Name = "Restored data", 
-                DateTime = new DateTime().AddDays(-5.9),
+                DateTime = DateTime.Now.AddDays(-5.9),
                 Cell = cell3,
                 User = mihail,
             };
@@ -99,7 +99,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record9 = new Record 
             { 
                 Name = "Copied data", 
-                DateTime = new DateTime().AddDays(-1.5),
+                DateTime = DateTime.Now.AddDays(-1.5),
                 Cell = cell2,
                 User = andrii,
             };
@@ -107,7 +107,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record10 = new Record
             {
                 Name = "Transfered data",
-                DateTime = new DateTime().AddDays(-9),
+                DateTime = DateTime.Now.AddDays(-9),
                 Cell = cell3,
                 User = mihail,
             };
@@ -115,7 +115,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record11 = new Record
             {
                 Name = "Moved data",
-                DateTime = new DateTime().AddDays(-0.5),
+                DateTime = DateTime.Now.AddDays(-0.5),
                 Cell = cell1,
                 User = andrii,
             };
@@ -123,7 +123,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record12 = new Record
             {
                 Name = "Changed data",
-                DateTime = new DateTime().AddDays(-2),
+                DateTime = DateTime.Now.AddDays(-2),
                 Cell = cell1,
                 User = andrii,
             };
@@ -131,14 +131,14 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
             var record13 = new Record
             {
                 Name = "Changed data",
-                DateTime = new DateTime().AddDays(-5),
+                DateTime = DateTime.Now.AddDays(-5),
                 Cell = cell2,
                 User = mihail,
             };
 
-            await context.Records.AddRangeAsync(record1, record2, record3, record4, record5, record6, record7,
+            context.Records.AddRange(record1, record2, record3, record4, record5, record6, record7,
                                                 record8, record9, record10, record11, record12, record13);
-            await context.SaveChangesAsync();
+            context.SaveChanges();
         }
     }
 }
