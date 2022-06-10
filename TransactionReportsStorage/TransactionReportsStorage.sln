@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionReportsStorage.Core", "TransactionReportsStorage.Core\TransactionReportsStorage.Core.csproj", "{01389165-9EB4-4C03-A87A-9C5B6B4DF2B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.Core", "TransactionReportsStorage.Core\TransactionReportsStorage.Core.csproj", "{01389165-9EB4-4C03-A87A-9C5B6B4DF2B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionReportsStorage.Application", "TransactionReportsStorage.Application\TransactionReportsStorage.Application.csproj", "{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.Application", "TransactionReportsStorage.Application\TransactionReportsStorage.Application.csproj", "{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionReportsStorage.Infrastructure", "TransactionReportsStorage.Infrastructure\TransactionReportsStorage.Infrastructure.csproj", "{512C53FA-6EC7-4799-9BC4-39AECC6E7864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512C53FA-6EC7-4799-9BC4-39AECC6E7864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512C53FA-6EC7-4799-9BC4-39AECC6E7864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512C53FA-6EC7-4799-9BC4-39AECC6E7864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512C53FA-6EC7-4799-9BC4-39AECC6E7864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
