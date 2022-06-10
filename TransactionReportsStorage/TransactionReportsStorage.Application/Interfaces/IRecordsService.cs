@@ -5,7 +5,9 @@ namespace TransactionReportsStorage.App.Interfaces
 {
     public interface IRecordsService
     {
-        Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters, string? cellName, 
-                                             DateOnly? startDate, DateOnly? endDate);
+        Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters);
+
+        Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters, string cellName,
+                                                DateTime startDate, DateTime endDate);
     }
 }
