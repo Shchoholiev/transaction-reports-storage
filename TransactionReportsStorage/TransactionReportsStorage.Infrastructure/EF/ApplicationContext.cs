@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TransactionReportsStorage.Core.Entities;
+using TransactionReportsStorage.Infrastructure.FluentAPI;
 
 namespace TransactionReportsStorage.Infrastructure.EF
 {
@@ -16,6 +17,9 @@ namespace TransactionReportsStorage.Infrastructure.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new RecordEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new CellEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
         }
 
         public DbSet<Record> Records { get; set; }
