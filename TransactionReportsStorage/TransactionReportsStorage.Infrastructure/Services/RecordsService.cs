@@ -1,4 +1,5 @@
-﻿using TransactionReportsStorage.Application.Interfaces;
+﻿using Microsoft.Extensions.Logging;
+using TransactionReportsStorage.Application.Interfaces;
 using TransactionReportsStorage.Application.Interfaces.Repositories;
 using TransactionReportsStorage.Application.Mapping;
 using TransactionReportsStorage.Application.Models.DTO;
@@ -11,11 +12,14 @@ namespace TransactionReportsStorage.Infrastructure.Services
     {
         private readonly IGenericRepository<Record> _recordsRepository;
 
+        private readonly ILogger _logger;
+
         private readonly Mapper _mapper = new();
 
-        public RecordsService(IGenericRepository<Record> recordsRepository)
+        public RecordsService(IGenericRepository<Record> recordsRepository, ILogger<RecordsService> logger)
         {
             this._recordsRepository = recordsRepository;
+            this._logger = logger;
         }
 
         public async Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters, string? cellName, 
@@ -28,6 +32,8 @@ namespace TransactionReportsStorage.Infrastructure.Services
                                                   && DateOnly.FromDateTime(r.DateTime) <= endDate,
                                                   r => r.Cell, r => r.User);
             var dtos = this._mapper.Map(records);
+
+            this._logger.LogInformation($"Returned records page {dtos.PageNumber} from database.");
 
             return dtos;
         }
