@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using TransactionReportsStorage.Application.Models.DTO;
-using TransactionReportsStorage.Application.Paging;
+using TransactionReportsStorage.App.Models.DTO;
+using TransactionReportsStorage.App.Paging;
 using TransactionReportsStorage.Core.Entities;
 
-namespace TransactionReportsStorage.Application.Mapping
+namespace TransactionReportsStorage.App.Mapping
 {
     public class Mapper
     {

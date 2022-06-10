@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using TransactionReportsStorage.Application.Interfaces.Repositories;
-using TransactionReportsStorage.Application.Paging;
+using TransactionReportsStorage.App.Interfaces.Repositories;
+using TransactionReportsStorage.App.Paging;
 using TransactionReportsStorage.Core.Common;
 using TransactionReportsStorage.Infrastructure.EF;
 

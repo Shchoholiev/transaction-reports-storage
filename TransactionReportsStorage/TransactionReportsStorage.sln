@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.Core", "TransactionReportsStorage.Core\TransactionReportsStorage.Core.csproj", "{01389165-9EB4-4C03-A87A-9C5B6B4DF2B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.Application", "TransactionReportsStorage.Application\TransactionReportsStorage.Application.csproj", "{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.App", "TransactionReportsStorage.Application\TransactionReportsStorage.App.csproj", "{FCAC8579-1CB5-4C32-AC67-902BB6F1EE77}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionReportsStorage.Infrastructure", "TransactionReportsStorage.Infrastructure\TransactionReportsStorage.Infrastructure.csproj", "{512C53FA-6EC7-4799-9BC4-39AECC6E7864}"
 EndProject

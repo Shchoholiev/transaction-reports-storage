@@ -6,7 +6,7 @@ namespace TransactionReportsStorage.Infrastructure.DataInitializer
 {
     public static class DbInitializer
     {
-        public static async Task InitializeDb(ServiceProvider serviceProvider)
+        public static async Task InitializeDb(IServiceProvider serviceProvider)
         {
             var scope = serviceProvider.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<ApplicationContext>();

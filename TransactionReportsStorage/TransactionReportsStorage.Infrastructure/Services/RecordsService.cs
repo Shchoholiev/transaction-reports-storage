@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using TransactionReportsStorage.Application.Interfaces;
-using TransactionReportsStorage.Application.Interfaces.Repositories;
-using TransactionReportsStorage.Application.Mapping;
-using TransactionReportsStorage.Application.Models.DTO;
-using TransactionReportsStorage.Application.Paging;
+using TransactionReportsStorage.App.Interfaces;
+using TransactionReportsStorage.App.Interfaces.Repositories;
+using TransactionReportsStorage.App.Mapping;
+using TransactionReportsStorage.App.Models.DTO;
+using TransactionReportsStorage.App.Paging;
 using TransactionReportsStorage.Core.Entities;
 
 namespace TransactionReportsStorage.Infrastructure.Services

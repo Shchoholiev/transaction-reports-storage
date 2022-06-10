@@ -1,7 +1,7 @@
-﻿using TransactionReportsStorage.Application.Models.DTO;
-using TransactionReportsStorage.Application.Paging;
+﻿using TransactionReportsStorage.App.Models.DTO;
+using TransactionReportsStorage.App.Paging;
 
-namespace TransactionReportsStorage.Application.Interfaces
+namespace TransactionReportsStorage.App.Interfaces
 {
     public interface IRecordsService
     {
