@@ -1,4 +1,4 @@
-﻿namespace TransactionReportsStorage.Application.Paging
+﻿namespace TransactionReportsStorage.App.Paging
 {
     public class PagedList<T> : List<T>, IPagedList
     {

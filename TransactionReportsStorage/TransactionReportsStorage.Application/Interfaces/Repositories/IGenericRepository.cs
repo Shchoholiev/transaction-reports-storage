@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using TransactionReportsStorage.Application.Paging;
+using TransactionReportsStorage.App.Paging;
 using TransactionReportsStorage.Core.Common;
 
-namespace TransactionReportsStorage.Application.Interfaces.Repositories
+namespace TransactionReportsStorage.App.Interfaces.Repositories
 {
     public interface IGenericRepository<TEntity> where TEntity : EntityBase
     {

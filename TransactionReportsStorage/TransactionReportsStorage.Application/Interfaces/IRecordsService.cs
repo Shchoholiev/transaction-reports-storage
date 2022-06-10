@@ -1,11 +1,13 @@
-﻿using TransactionReportsStorage.Application.Models.DTO;
-using TransactionReportsStorage.Application.Paging;
+﻿using TransactionReportsStorage.App.Models.DisplayDto;
+using TransactionReportsStorage.App.Paging;
 
-namespace TransactionReportsStorage.Application.Interfaces
+namespace TransactionReportsStorage.App.Interfaces
 {
     public interface IRecordsService
     {
-        Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters, string? cellName, 
-                                             DateOnly? startDate, DateOnly? endDate);
+        Task<PagedList<RecordDisplayDto>> GetPageAsync(PageParameters pageParameters);
+
+        Task<PagedList<RecordDisplayDto>> GetPageAsync(PageParameters pageParameters, string cellName,
+                                                DateTime startDate, DateTime endDate);
     }
 }

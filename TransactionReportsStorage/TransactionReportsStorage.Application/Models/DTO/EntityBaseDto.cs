@@ -1,4 +1,4 @@
-﻿namespace TransactionReportsStorage.Application.Models.DTO
+﻿namespace TransactionReportsStorage.App.Models.DTO
 {
     public abstract class EntityBaseDto
     {
