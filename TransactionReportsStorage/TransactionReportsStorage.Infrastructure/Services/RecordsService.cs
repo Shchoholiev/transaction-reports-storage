@@ -2,7 +2,7 @@
 using TransactionReportsStorage.App.Interfaces;
 using TransactionReportsStorage.App.Interfaces.Repositories;
 using TransactionReportsStorage.App.Mapping;
-using TransactionReportsStorage.App.Models.DTO;
+using TransactionReportsStorage.App.Models.DisplayDto;
 using TransactionReportsStorage.App.Paging;
 using TransactionReportsStorage.Core.Entities;
 
@@ -22,7 +22,7 @@ namespace TransactionReportsStorage.Infrastructure.Services
             this._logger = logger;
         }
 
-        public async Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters)
+        public async Task<PagedList<RecordDisplayDto>> GetPageAsync(PageParameters pageParameters)
         {
             var records = await this._recordsRepository.GetPageAsync(pageParameters, r => r.Cell, r => r.User);
             var dtos = this._mapper.Map(records);
@@ -32,7 +32,7 @@ namespace TransactionReportsStorage.Infrastructure.Services
             return dtos;
         }
 
-        public async Task<PagedList<RecordDto>> GetPageAsync(PageParameters pageParameters, string cellName, 
+        public async Task<PagedList<RecordDisplayDto>> GetPageAsync(PageParameters pageParameters, string cellName, 
                                                              DateTime startDate, DateTime endDate)
         {
             var records = await this._recordsRepository
